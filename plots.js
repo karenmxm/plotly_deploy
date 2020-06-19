@@ -53,6 +53,7 @@ function buildMetadata(sample) {
       var sampleId = samples.otu_ids;
       console.log(sampleId)
       
+      // Bar Chart
       var trace = {
         x: sampleValue.slice(0,10),
         y: sampleId.slice(0,10).map(otu_ids => `OTU ${otu_ids}`),       
@@ -78,6 +79,7 @@ function buildMetadata(sample) {
 
     Plotly.newPlot("bar", [trace], barLayout);
 
+      // Bubble Chart
       var traceBubble = {
         x: sampleId,
         y: sampleValue,   
@@ -92,8 +94,11 @@ function buildMetadata(sample) {
 
       var bubbleLayout = {
         title: {
-          text:"OTU ID",
-        },
+          text:"Bacteria Cultures Per Sample",
+          },
+        xaxis: {
+          title: "OTU ID"
+          },
         showlegend: false,
         height: 500,
         width: 1100
