@@ -10,6 +10,8 @@ function init() {
           .text(sample)
           .property("value", sample);
       });
+      // Build the table when the page loads
+      optionChanged(sampleNames[0]);
   })}
 
   init();
@@ -40,18 +42,18 @@ function buildMetadata(sample) {
     d3.json("samples.json").then((data) => {
       var sampledata = data.samples;
       var sampleArray = sampledata.filter(sampleObj => sampleObj.id == sample);
-      console.log(sampleArray);
+      // console.log(sampleArray);
       var samples = sampleArray[0];
-      console.log(samples);
+      // console.log(samples);
       
       var sampleValue = samples.sample_values;
-      console.log(sampleValue)
+      // console.log(sampleValue)
 
       var sampleLabel = samples.otu_labels;
-      console.log(sampleLabel)
+      // console.log(sampleLabel)
 
       var sampleId = samples.otu_ids;
-      console.log(sampleId)
+      // console.log(sampleId)
       
       // Bar Chart
       var trace = {
@@ -64,7 +66,6 @@ function buildMetadata(sample) {
 
       // Apply the group bar mode to the layout
       var barLayout = {
-        title: "Test",
         margin: {
           l: 150,
           // r: 100,
@@ -72,7 +73,6 @@ function buildMetadata(sample) {
           // b: 100
         },
         yaxis: {
-          // title: "y-axis",
           autorange: 'reversed'
         },
       };
@@ -125,5 +125,4 @@ function buildMetadata(sample) {
 
   };
 
-// Build the table when the page loads
-optionChanged("940");
+
