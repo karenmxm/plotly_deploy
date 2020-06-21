@@ -1,5 +1,6 @@
 # Plotly_Deploy
 
-## Tools
+## Tools and Resources
 - VS Code
 - Google Chrome
+- Plotly.js
