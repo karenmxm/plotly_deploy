@@ -1,1 +1,5 @@
-# plotly_deploy
+# Plotly_Deploy
+
+## Tools
+- VS Code
+- Google Chrome
